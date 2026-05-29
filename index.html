@@ -83,19 +83,18 @@ background:#fafafa;
 font-weight:800;
 }
 
-/* ADMIN */
+/* ADMIN NICHT MEHR FIXED */
 .admin{
-position:fixed;
-bottom:10px;
-right:10px;
-width:320px;
 background:white;
-padding:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+padding:12px;
 border-radius:10px;
+margin-top:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
-.hidden{display:none;}
+.hidden{
+display:none;
+}
 
 </style>
 </head>
@@ -181,18 +180,15 @@ Speichern
 </table>
 </div>
 
-<!-- ADMIN -->
-<div class="admin">
+<!-- ADMIN (EINGEBETTET) -->
+<div class="card admin">
+
 <h3>Admin</h3>
 
 <input type="password" id="pw" placeholder="Passwort">
 <button onclick="login()">Login</button>
 
 <div id="panel" class="hidden">
-
-<button onclick="closeAdmin()" style="width:100%;background:#ffdddd;">
-Schließen ✖
-</button>
 
 <hr>
 
@@ -209,6 +205,7 @@ Schließen ✖
 <button onclick="setVac()">Speichern</button>
 
 </div>
+
 </div>
 
 <script>
@@ -333,11 +330,6 @@ function login(){
 if(document.getElementById("pw").value==="0815"){
 document.getElementById("panel").classList.remove("hidden");
 }
-}
-
-/* CLOSE ADMIN */
-function closeAdmin(){
-document.getElementById("panel").classList.add("hidden");
 }
 
 /* SETTINGS */
